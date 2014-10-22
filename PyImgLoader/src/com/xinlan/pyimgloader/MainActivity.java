@@ -12,7 +12,7 @@ import android.widget.ListView;
 public class MainActivity extends Activity
 {
     
-    public static final String[] urls = Constants.githubUrls;
+    public static final String[] urls = Constants.images;
     private LayoutInflater mInflater;
     private ListView mListView;
 
