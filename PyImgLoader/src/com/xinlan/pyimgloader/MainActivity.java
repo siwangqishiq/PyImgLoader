@@ -1,5 +1,7 @@
 package com.xinlan.pyimgloader;
 
+import com.xinlan.pyimgloader.core.PyImageLoader;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -73,6 +75,8 @@ public class MainActivity extends Activity
             }
             String url = urls[position];
             //ImageLoader.getInstance().displayImage(url, holder.img,options,null,null);
+            
+            PyImageLoader.getInstance().loadImage(url, holder.img);
             return convertView;
         }
     }// end inner class

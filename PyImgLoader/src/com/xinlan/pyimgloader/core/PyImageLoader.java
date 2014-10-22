@@ -9,15 +9,17 @@ import android.widget.ImageView;
  * PyImageLoader
  * 
  * @author panyi
- *
+ * 
  */
 public class PyImageLoader
 {
     private static final ReentrantLock mLock = new ReentrantLock();
     private volatile static PyImageLoader instance;
-    
+    protected PyConfig mConfig;
+
     /**
      * ·µ»Øµ¥Àý
+     * 
      * @return
      */
     public static PyImageLoader getInstance()
@@ -35,12 +37,20 @@ public class PyImageLoader
         }
         return instance;
     }
-    
+
     private PyImageLoader()
     {
     }
-    
-    public void loadImage(String url,ImageView imageView){
+
+    public void init(PyConfig config)
+    {
+        mLock.lock();
+        this.mConfig = config;
         
+        mLock.unlock();
     }
-}//end class
+
+    public void loadImage(String url, ImageView imageView)
+    {
+    }
+}// end class
